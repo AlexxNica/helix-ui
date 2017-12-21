@@ -1,0 +1,37 @@
+hx-modal {
+  color: initial;
+  display: none;
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  font-style: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  text-align: initial;
+  text-decoration: none;
+  text-shadow: none;
+  text-transform: none;
+  white-space: normal;
+  word-break: normal;
+  word-spacing: normal;
+  word-wrap: normal;
+
+  &[open] {
+    display: block;
+  }
+
+  header {
+    margin-bottom: 1.25rem;
+    margin-right: 16px;
+    word-wrap: break-word;
+  }
+
+  footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 1.25rem;
+
+    button:not(:first-child) {
+      margin-left: 1.25rem;
+    }
+  }
+}

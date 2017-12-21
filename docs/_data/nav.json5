@@ -51,6 +51,7 @@
             { label: '<hx-checkbox>', path: 'hx-checkbox' },
             { label: '<hx-disclosure>', path: 'hx-disclosure' },
             { label: '<hx-icon>', path: 'hx-icon' },
+            { label: '<hx-modal>', path: 'hx-modal' },
             { label: '<hx-popover>', path: 'hx-popover' },
             { label: '<hx-reveal>', path: 'hx-reveal' },
             { label: '<hx-status>', path: 'hx-status' },

@@ -5,32 +5,44 @@ hx-modal {
   font-size: 1rem;
   font-style: normal;
   font-weight: normal;
+  height: 0;
   letter-spacing: normal;
   text-align: initial;
   text-decoration: none;
   text-shadow: none;
   text-transform: none;
+  width: 100%;
   white-space: normal;
   word-break: normal;
   word-spacing: normal;
   word-wrap: normal;
 
+  &::before {
+    background-color: fade(@gray-1000, 60%);
+    content: " ";
+    height: 100%;
+    left: 0;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: @modal-backdrop-z-index;
+  }
+
   &[open] {
     display: block;
   }
 
-  header {
+  & > &head {
+    display: block;
     margin-bottom: 1.25rem;
-    margin-right: 16px;
-    word-wrap: break-word;
   }
 
-  footer {
+  & > &foot {
     display: flex;
     justify-content: center;
     margin-top: 1.25rem;
 
-    button:not(:first-child) {
+    .hxBtn + .hxBtn {
       margin-left: 1.25rem;
     }
   }

@@ -12,17 +12,19 @@ title: <hx-modal>
     </hx-disclosure>
 
     <hx-modal id="demo-modal">
-      <header slot="header">
+      <hx-modalhead>
         <h3 class="hxSubSectionTitle">Demo Modal Header</h3>
-      </header>
-      <p>
-        This is the body of a demo modal. No further actions can happen
-        on the page until this modal is closed.
-      </p>
-      <footer slot="footer">
+      </hx-modalhead>
+      <hx-modalbody>
+        <p>
+          This is the body of a demo modal. No further actions can happen
+          on the page until this modal is closed.
+        </p>
+      </hx-modalbody>
+      <hx-modalfoot>
         <button class="hxBtn hxBtn--primary">Confirm</button>
         <button class="hxBtn">Cancel</button>
-      </footer>
+      </hx-modalfoot>
     </hx-modal>
   </div>
   {% code 'html' %}
@@ -31,17 +33,19 @@ title: <hx-modal>
     </hx-disclosure>
 
     <hx-modal id="demo-modal">
-      <header slot="header">
+      <hx-modalhead>
         <h3 class="hxSubSectionTitle">Demo Modal Header</h3>
-      </header>
-      <p>
-        This is the body of a demo modal. No further actions can happen
-        on the page until this modal is closed.
-      </p>
-      <footer slot="footer">
+      </hx-modalhead>
+      <hx-modalbody>
+        <p>
+          This is the body of a demo modal. No further actions can happen
+          on the page until this modal is closed.
+        </p>
+      </hx-modalbody>
+      <hx-modalfoot>
         <button class="hxBtn hxBtn--primary">Confirm</button>
         <button class="hxBtn">Cancel</button>
-      </footer>
+      </hx-modalfoot>
     </hx-modal>
   {% endcode %}
 </section>

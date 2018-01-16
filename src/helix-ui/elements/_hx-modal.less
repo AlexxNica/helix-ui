@@ -1,16 +1,6 @@
 @import "./_hx-element";
 @import 'core/hx-icon';
 
-#backdrop {
-  background-color: fade(@gray-1000, 60%);
-  height: 100%;
-  left: 0;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: @modal-z-index;
-}
-
 #container {
   background-color: @gray-0;
   box-shadow: 0px 7px 9px 0 fade(@gray-1000, 30%);
@@ -21,23 +11,20 @@
   top: 50%;
   transform: translateY(-50%);
   width: fit-content;
+  z-index: @modal-content-z-index;
 }
 
 #close {
+  border: none;
   color: @gray-700;
   cursor: pointer;
-  height: .75rem;
+  height: 1rem;
   margin-right: 1.25rem;
+  padding: 0;
   position: absolute;
   right: 0;
-  width: .75rem;
 
-  > svg {
-    vertical-align: top;
+  svg {
+    vertical-align: 4px;
   }
-}
-
-#header {
-  margin-bottom: 1.25rem;
-  min-height: .75rem;
 }

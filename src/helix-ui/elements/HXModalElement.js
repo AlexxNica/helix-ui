@@ -1,4 +1,5 @@
 import { HXElement } from './HXElement';
+import { KEYS } from '../util';
 import shadowStyles from './_hx-modal.less';
 
 const tagName = 'hx-modal';
@@ -6,15 +7,11 @@ const template = document.createElement('template');
 
 template.innerHTML = `
   <style>${shadowStyles}</style>
-  <div id="backdrop">
-    <div id="container">
-      <hx-icon type="times" id="close"></hx-icon>
-      <div id="header">
-        <slot name="header"></slot>
-      </div>
-      <slot></slot>
-      <slot name="footer"><slot>
-    </div>
+  <div id="container">
+    <button id="close">
+      <hx-icon type="times"></hx-icon>
+    </button>
+    <slot></slot>
   </div>
 `;
 
@@ -30,6 +27,7 @@ export class HXModalElement extends HXElement {
     constructor () {
         super(tagName, template);
         this._toggle = this._toggle.bind(this);
+        this._keyUp = this._keyUp.bind(this);
     }
 
     connectedCallback () {
@@ -37,10 +35,12 @@ export class HXModalElement extends HXElement {
         this._target = this.shadowRoot.querySelector("#close");
 
         this._target.addEventListener('click', this._toggle);
+        document.addEventListener('keyup', this._keyUp);
     }
 
     disconnectedCallback () {
         this._target.removeEventListener('click', this._toggle);
+        document.removeEventListener('keyup', this._keyUp);
     }
 
     attributeChangedCallback (attr, oldValue, newValue) {
@@ -49,6 +49,16 @@ export class HXModalElement extends HXElement {
 
     _toggle () {
         this.open = !this.open;
+    }
+
+    _keyUp (event) {
+        switch (event.keyCode) {
+            case KEYS.Escape:
+                this.open = false;
+                break;
+            default:
+                break;
+        }
     }
 
     set open (value) {
